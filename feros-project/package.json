@@ -1,0 +1,20 @@
+{
+  "name": "feros-project",
+  "version": "0.1.0",
+  "description": "Fuel Efficient Route Navigation System",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+    "dev:win": "start cmd /c \"npm run dev --workspace=backend\" && npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
